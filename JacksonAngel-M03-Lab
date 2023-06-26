@@ -1,0 +1,48 @@
+# This app will take user input for a vehicle and print it in a user-friendly format. 
+
+# Define a class Vehicle
+class Vehicle:
+    # Define the constructor of the class
+    # It takes a parameter vehicle_type which is assigned to the instance variable self.vehicle_type
+    def __init__(self, vehicle_type):
+        self.vehicle_type = vehicle_type
+
+# Define a class Automobile which inherits from the Vehicle class
+class Automobile(Vehicle):
+    # Define the constructor of the class
+    # It takes parameters for year, make, model, doors, and roof
+    def __init__(self, year, make, model, doors, roof):
+        # Call the constructor of the parent class Vehicle
+        # Pass "car" as the vehicle_type
+        super().__init__("car")
+        # Assign the passed parameters to instance variables
+        self.year = year
+        self.make = make
+        self.model = model
+        self.doors = doors
+        self.roof = roof
+
+# Define the main function where the program starts
+def main():
+    # Get user input for each attribute of the Automobile
+    # The input is converted to the appropriate type (int for year and doors, str for the rest)
+    year = int(input("Enter the year of the car: "))
+    make = input("Enter the make of the car: ")
+    model = input("Enter the model of the car: ")
+    doors = int(input("Enter the number of doors on the car: "))
+    roof = input("Enter the type of roof the car has: ")
+
+    # Create an instance of the Automobile class with the user-provided input
+    automobile = Automobile(year, make, model, doors, roof)
+
+    # Print the attributes of the automobile instance
+    print("Vehicle type:", automobile.vehicle_type)
+    print("Year:", automobile.year)
+    print("Make:", automobile.make)
+    print("Model:", automobile.model)
+    print("Number of doors:", automobile.doors)
+    print("Type of roof:", automobile.roof)
+
+# Call the main function
+if __name__ == "__main__":
+    main()
